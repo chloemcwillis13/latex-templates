@@ -1,0 +1,155 @@
+\documentclass[11pt]{article}
+
+% --- Packages ---
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amsfonts, amssymb, amsthm}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{url}
+
+% --- Header & Footer Setup ---
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Course Name} % Change this
+\chead{Homework X}  % Change this
+\rhead{Your Name}   % Change this
+\cfoot{\thepage}
+
+% --- Custom Commands ---
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\pdd}[2]{\frac{\partial^2 #1}{\partial #2^2}}
+
+% COLOR SETTINGS FOR SOLUTIONS
+\definecolor{primarycolor}{HTML}{EE4B2B} % Red
+
+% Solution Environment
+\newenvironment{mysolution}{
+    \begin{list}{}{
+        \setlength{\leftmargin}{1.5em}
+        \setlength{\rightmargin}{0pt}
+    }
+    \item \textbf{\color{primarycolor}Solution:} 
+}{
+    \end{list}
+}
+
+% Final Result Box
+\newcommand{\boxsol}[1]{
+    \begin{center}
+        \color{primarycolor}
+        \setlength{\fboxrule}{1.0pt}
+        \fbox{
+            \color{black}
+            \hspace{0.1em}
+            \begin{minipage}{0.8\textwidth}
+                \centering \vspace{0.2cm}
+                #1
+                \vspace{0.2cm}
+            \end{minipage}
+            \hspace{0.1em}
+        }
+    \end{center}
+}
+
+% Code Listing Style
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    frame=single
+}
+
+\lstset{style=mystyle}
+
+\begin{document}
+
+% --- Title Page ---
+\begin{titlepage}
+    \centering
+    
+    % --- LOGO SECTION ---
+    % If you have an image, comment out the \framebox line and uncomment the \includegraphics line
+    % \includegraphics[width=0.4\textwidth]{logo.png}\\[0.2cm] 
+    
+    % Placeholder Box (Remove this when you have a real image)
+    \framebox[\textwidth]{\parbox[c][3cm][c]{\textwidth}{\centering \Huge \bfseries \color{gray} LOGO PLACEHOLDER}}\\[0.5cm]
+
+    % Update University Name
+    \textsc{\LARGE University Name}\\[2.3cm]
+
+    % Update Course Information
+    \rule{\linewidth}{0.5mm} \\[0.4cm]
+    { \huge \bfseries COURSE 101 \\[0.2cm] 
+      \Large Course Title} \\
+    \rule{\linewidth}{0.5mm} \\[3.0cm]
+
+    % Update Assignment Information (textbook line is optional)
+    {\huge \textbf{Homework X}} \\[0.5cm]
+    \large{Textbook: \textit{Book Name} by Author} \\
+    
+    \vfill
+
+    % Update Personal Information
+    \rule{\linewidth}{0.2mm} \\[0.2cm]
+    \begin{minipage}[t]{0.5\textwidth}
+        \begin{flushleft} \large
+            \textbf{Your Name} \\
+            % UIN number is optional
+            UIN: 123456789
+        \end{flushleft}
+    \end{minipage}
+    \begin{minipage}[t]{0.45\textwidth}
+        \begin{flushright} \large
+            \today \\
+            Location
+        \end{flushright}
+    \end{minipage}
+
+\end{titlepage}
+
+\newpage
+\setcounter{page}{1}
+
+% --- PROBLEMS SECTION ---
+\include{problems}
+
+% --- REFERENCES SECTION ---
+\newpage
+
+% This includes all references even if not cited 
+\nocite{*}
+
+% This sets the style of the bibliography (plain, unsrt, alpha, etc.)
+\bibliographystyle{plain} 
+
+\bibliography{references}
+
+% --- CODE APPENDIX SECTION ---
+\newpage
+\include{appendix}
+
+\end{document}
