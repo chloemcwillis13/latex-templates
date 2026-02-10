@@ -11,8 +11,6 @@ Currently includes a **Standard Assignment Template** optimized for:
 
 ### 1. Standard Assignment
 A versatile template suitable for weekly homework, problem sets, and short reports.
-
-- **Location:** [`/standard-assignment`](./standard-assignment)
 - **Features:**
     - Automatic Header (Name, Course, Date)
     - Clean 'Problem/Solution' environment
@@ -28,8 +26,7 @@ A versatile template suitable for weekly homework, problem sets, and short repor
 
 ## Preview
 
-![Template Preview](./standard-assignment/preview.png)
-*(Note: Don't forget to upload a screenshot named 'preview.png' into the folder!)*
+![Template Preview](./preview.png)
 
 ## License
 
